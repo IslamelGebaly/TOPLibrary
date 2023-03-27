@@ -1,0 +1,25 @@
+{
+  "name": "TOPLibrary",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IslamelGebaly/TOPLibrary.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IslamelGebaly/TOPLibrary/issues"
+  },
+  "homepage": "https://github.com/IslamelGebaly/TOPLibrary#readme",
+  "devDependencies": {
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.8.0",
+    "prettier": "2.8.7"
+  }
+}
