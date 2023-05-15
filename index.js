@@ -24,7 +24,20 @@ function displayBook(book){
         myLibrary.splice(index, 1);
         loadBooks();
     };
+
+    const readButton = document.createElement("button");
+    readButton.appendChild(document.createTextNode("read"));
+    readButton.setAttribute("class", "not-read");
+    readButton.onclick = () => {
+        if(readButton.getAttribute("class") === "not-read")
+            readButton.setAttribute("class", "read");
+        else
+            readButton.setAttribute("class", "not-read");
+    };
+
     item.appendChild(rmButton);
+    item.appendChild(readButton);
+
     bookContainer.appendChild(item);
 }
 
