@@ -1,0 +1,70 @@
+body{
+    background-color: #00184C;
+    height: 100%;
+    margin: 0;
+}
+
+#app-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+h1{
+    text-align: center;
+    font : 2em bold monospace;
+    color: aliceblue;
+}
+
+form{
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 50%;
+    padding: 2px;
+}
+
+label{
+    position: relative;
+    
+}
+
+input[type=text]{
+    position: relative;
+    height: 1.2em;
+}
+
+input[type=submit]{
+    position: relative;
+    border-radius: 50%;
+    height: 2em;
+    width: 2em;
+    margin: 10px;
+    align-self: flex-end;
+    border: 2px solid #00184C;
+    color: aliceblue;
+    font-weight: bold;
+    font-size: large;
+    background-color: #00184C;
+}
+
+input[type=submit]:hover{
+    color: #00184C;
+    background-color: aliceblue;
+}
+
+#book-container{
+    margin: 0px 10px 0px 10px;
+    background-color: aliceblue;
+    width: 75%;
+    height: 1.2em;
+}
+
+th, td{
+    border: 2px solid #00184C;
+    font-size: .75em;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
