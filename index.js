@@ -7,6 +7,7 @@ function Book(title, author, publisher, ISBN, id){
     this.publisher = publisher;
     this.ISBN = ISBN;
     this.id = id;
+    this.read = false;
 }
 
 function displayBook(book){
@@ -38,18 +39,33 @@ function displayBook(book){
     };
 
     const readButton = document.createElement("button");
-    readButton.appendChild(document.createTextNode("read"));
-    readButton.setAttribute("class", "not-read");
+    if(!book.read)
+        readButton.setAttribute("class", "not-read");
+    else{
+        readButton.textContent = "✅";
+        readButton.setAttribute("class", "read");
+    }
     readButton.onclick = () => {
-        if(readButton.getAttribute("class") === "not-read")
+        if(readButton.getAttribute("class") === "not-read"){
             readButton.setAttribute("class", "read");
-        else
+            readButton.textContent = "✅";
+            book.read = true;
+        }
+        else{
             readButton.setAttribute("class", "not-read");
+            readButton.textContent = "";
+            book.read = false;
+        }
     };
 
-    
-    item.appendChild((document.createElement("td")).appendChild(readButton));
-    item.appendChild((document.createElement("td")).appendChild(rmButton));
+    const readButtonContainer = document.createElement("td");
+    readButtonContainer.appendChild(readButton)
+    item.appendChild(readButtonContainer);
+
+    const rmButtonContainer = document.createElement("td");
+    rmButtonContainer.appendChild(rmButton)
+    item.appendChild(rmButtonContainer);
+
     bookContainer.appendChild(item);
 }
 
@@ -102,14 +118,20 @@ function main(){
         e.preventDefault();
         const bookData = {};
         console.log("adding book....");
+        let flag = true;
         Object.keys(bookForm.elements).forEach(key => {
             let element = bookForm.elements[key];
+            if(element.value === ""){
+                flag = false;
+                return;
+            }
             if(element.type != "submit"){
                 bookData[element.name] = element.value;
             }
         });
-        console.log(bookData);
-        addBookToLibrary(bookData["title"], bookData["author"], bookData["publisher"], bookData["ISBN"]);
+        
+        if(flag)
+            addBookToLibrary(bookData["title"], bookData["author"], bookData["publisher"], bookData["ISBN"]);
         loadBooks();
     })
 

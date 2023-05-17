@@ -66,5 +66,25 @@ th, td{
     border: 2px solid #00184C;
     font-size: .75em;
     font-family: 'Courier New', Courier, monospace;
-    
+    text-align: center;
+}
+
+button{
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    background-color: red;
+    color: aliceblue;
+    font-size: large;
+    align-self: center;
+}
+
+.read{
+    background-color: #00184C;
+    color: aliceblue;
+    text-align: center;
+}
+
+.not-read{
+    background-color: aliceblue;
 }
